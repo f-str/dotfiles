@@ -1,0 +1,10 @@
+[user]
+	email = fload2000@protonmail.com
+	name = Fload
+	signingkey = 31398A9CAB25C236
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
