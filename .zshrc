@@ -1,8 +1,9 @@
-# Path to .zsh direcotry
-export ZSH="${HOME}/.zsh/"
+export ZSH=~/.zsh
+export ZGEN=~/.zsh/zgen
+export PATH=$PATH:/usr/local/bin:~/.local/bin
 
 #load zgen
-source "${HOME}/.zsh/.zgen/zgen.zsh"
+source "${HOME}/.zsh/zgen/zgen.zsh"
 
 # if the init script doesn't exist
 if ! zgen saved; then
