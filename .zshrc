@@ -1,9 +1,9 @@
 export ZSH=~/.zsh
-export ZGEN=~/.zsh/zgen
+export ZGEN=~/.zgen
 export PATH=$PATH:/usr/local/bin:~/.local/bin
 
 #load zgen
-source "${HOME}/.zsh/zgen/zgen.zsh"
+source "${ZSH}/zgen/zgen.zsh"
 
 # if the init script doesn't exist
 if ! zgen saved; then
@@ -56,7 +56,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/web-search
   
   # theme
-  zgen oh-my-zsh ${HOME}/.zsh/themes/fload
+  zgen oh-my-zsh ${ZSH}/themes/fload
 
   # generate the init script from plugins above
   zgen save
