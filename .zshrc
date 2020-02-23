@@ -56,7 +56,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/web-search
   
   # theme
-  zgen oh-my-zsh ${ZSH}/themes/fload
+  zgen load Fload2000/agnoster-zsh-theme
 
   # generate the init script from plugins above
   zgen save
