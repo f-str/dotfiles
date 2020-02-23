@@ -14,7 +14,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git-prompt
   zgen oh-my-zsh plugins/sudo
   zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/arrow
   zgen oh-my-zsh plugins/bundler
   zgen oh-my-zsh plugins/dotenv
   zgen oh-my-zsh plugins/rake
@@ -54,6 +53,23 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/mercurial
   zgen oh-my-zsh plugins/nmap
   zgen oh-my-zsh plugins/web-search
+  
+  zgen load arialdomartini/oh-my-git
+  zgen load hchbaw/list-colors.zsh
+  zgen load sorin-ionescu/prezto
+  zgen load thrig/zsh-compdef
+  zgen load zsh-users/zsh-completions
+  zgen load zsh-users/zsh-completions src
+  zgen load http://git.code.sf.net/p/zsh/code Completion/Linux/Command
+  zgen load Vifon/deer
+  zgen load joel-porquet/zsh-dircolors-solarized
+  zgen load zsh-users/zaw
+  zgen load clvv/fasd
+  zgen load psprint/zsh-navigation-tools
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load trapd00r/zsh-syntax-highlighting-filetypes
+  zgen load zsh-users/zsh-history-substring-search
+  zgen load tarruda/zsh-autosuggestions
   
   # theme
   zgen load Fload2000/agnoster-zsh-theme
