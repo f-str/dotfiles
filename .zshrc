@@ -8,7 +8,7 @@ source "${ZSH}/zgen/zgen.zsh"
 # if the init script doesn't exist
 if ! zgen saved; then
 
-  # specify plugins here
+  # plugins
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/sudo
@@ -83,8 +83,70 @@ DISABLE_AUTO_TITLE="true"
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# You may need to manually set your language environment
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=${ZSH}/history
+
+# Set language environment
 export LANG=de_DE.UTF-8
+
+
+autoload -U compinit
+compinit -i
+
+zstyle ':completion:*' completer _complete _prefix
+zstyle ':completion:*' add-space true
+
+# Smart case matching && match inside filenames
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# 'm:{a-z}={A-Z}'
+# zstyle ':completion:*' matcher-list '' '' 'l:|=* r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*:*:*:*:*' menu select
+
+# Rehash when completing commands
+zstyle ":completion:*:commands" rehash 1
+
+# Process completion shows all processes with colours
+zstyle ':completion:*:*:*:*:processes' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+zstyle ':completion:*:*:*:*:processes' command 'ps -A -o pid,user,cmd'
+zstyle ':completion:*:*:*:*:processes' list-colors "=(#b) #([0-9]#)*=0=${color[green]}"
+zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
+# zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+
+# List all processes for killall
+zstyle ':completion:*:processes-names' command "ps -eo cmd= | sed 's:\([^ ]*\).*:\1:;s:\(/[^ ]*/\)::;/^\[/d'"
+
+# SSH usernames
+if [[ -f ~/.ssh/config ]]; then
+  _accounts=(`egrep "^User" ~/.ssh/config | sed s/User\ // | egrep -v '^\*$'`)
+  zstyle ':completion:*:users' users $_accounts
+fi
+
+# Colours in completion
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Display message when no matches are found
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+# Ignore internal zsh functions
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# Grouping for completion types (trial)
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:descriptions' format "%{$fg_bold[magenta]}%}= %d =%{$reset_color%}"
+# zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*' group-name ""
+
+# Speedup path completion
+zstyle ':completion:*' accept-exact '*(N)'
+
+# Cache expensive completions
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
+
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
