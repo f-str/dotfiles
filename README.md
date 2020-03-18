@@ -36,3 +36,4 @@ This install script will automatically install all requirements (which are liste
 - [ranger](https://wiki.archlinux.de/title/Ranger)
 - [feh](https://wiki.archlinux.de/title/Feh)
 - [i3lock](https://i3wm.org/i3lock/)
+- [flameshot](https://flameshot.js.org)

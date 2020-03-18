@@ -36,6 +36,7 @@ PKGS=(
         'ranger'
         'feh'
         'i3lock'
+        'flameshot'
 )
 
 for PKG in "${PKGS[@]}"; do

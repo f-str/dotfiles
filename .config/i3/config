@@ -195,3 +195,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use feh to set wallpaper
 exec_always --no-startup-id feh --bg-scale /home/florian/Pictures/wallpaper.jpg
+
+# Execute Flameshot
+exec_always flameshot
+bindsym Print exec flameshot gui
+bindsym Shift+Print exec flameshot screen -r
