@@ -21,3 +21,9 @@ alias ping='prettyping --nolegend'
 
 # Use ncdu instead of du
 alias du='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
+
+# Merge PDFs
+alias pdfmerge='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf'
+
+# Shrink PDF size
+alias pdfshrink='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=shrinked.pdf'
