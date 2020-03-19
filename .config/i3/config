@@ -54,7 +54,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+f exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"' -theme slate"
+bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"' -theme slate"
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -82,7 +82,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -166,14 +166,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #ff8700 #ff8700 #ffffff #ff8700   #ff8700
+client.focused_inactive #262626 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #262626 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
 client.background       #ffffff
+
+# Focus should not follow the mouse
+focus_follows_mouse no
 
 # Remove borders of windows
 for_window [class=".*"] border pixel 2
