@@ -10,6 +10,9 @@ alias cgu='bash $HOME/.changeGitUser.sh'
 # Update all pip packages in an environment
 alias pipup='pip freeze — local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U'
 
+# Use Neovim instead of vim
+alias vim='nvim'
+
 # Exit a virtual environment
 alias exitvenv='deactivate'
 
