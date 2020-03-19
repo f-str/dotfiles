@@ -4,20 +4,8 @@ echo
 echo "INSTALLING ALL THE REQUIREMENTS"
 echo
 
-# Install git
-echo "INSTALLING git"
-sudo pacman -S git --noconfirm --needed
-
-# Install the AUR-Helper yay
-echo "INSTALLING yay"
-cd
-git clone https://aur.archlinux.org/yay.git
-cd yay
-sudo makepkg -si
-cd
-rm -rf /yay
-
 PKGS=(
+        'git'
         'tmux'
         'zsh'
         'autojump'

@@ -5,7 +5,7 @@ My personal configuration files for my Linux systems. Use at your own risk :D
 
 ## Installation
 
-For installing this configuration files on your system execute the following command (make shure `wget` is installed):
+For installing this configuration files on your system execute the following command (make shure `wget` and `yay` are installed):
 
 `wget -O - http://github.com/Fload2000/dotfiles/blob/master/install.sh | bash`
 
