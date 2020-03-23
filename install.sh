@@ -38,6 +38,7 @@ echo
 
 mkdir .zsh
 mkdir .config
+mkdir .icons
 
 cd
 git clone --recursive https://github.com/Fload2000/dotfiles
@@ -47,6 +48,7 @@ cp .gitconfig $HOME/
 cp .vimrc $HOME/
 cp .zshrc $HOME/
 cp -r .zsh $HONE/.zsh
+cp -r .icons $HOME/.icons
 cp -a .config/. $HOME/.config/
 
 # Create directory for historyfiles
