@@ -32,7 +32,14 @@ for PKG in "${PKGS[@]}"; do
     yay -S "$PKG" --noconfirm --needed
 done
 
-// TODO copy dotfiles
+mkdir .zsh
+mkdir .config
+
+cd
+git clone --recursive https://github.com/Fload2000/dotfiles
+cd dotfiles
+cp -r .zsh $HONE/.zsh
+cp -a .config/. $HOME/.config/
 
 # Create directory for historyfiles
 mkdir $HOME/.zsh/history
