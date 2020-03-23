@@ -189,7 +189,7 @@ exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use feh to set wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-scale /home/florian/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-scale /home/florian/.config/wallpapers/wallpaper.jpg
 
 # Execute Flameshot
 exec_always flameshot
