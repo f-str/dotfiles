@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo
-echo "INSTALLING ALL THE REQUIREMENTS"
+echo "Installing all the requierments..."
 echo
 
 PKGS=(
@@ -32,12 +32,20 @@ for PKG in "${PKGS[@]}"; do
     yay -S "$PKG" --noconfirm --needed
 done
 
+echo
+echo "Copying the configuration files..."
+echo
+
 mkdir .zsh
 mkdir .config
 
 cd
 git clone --recursive https://github.com/Fload2000/dotfiles
 cd dotfiles
+cp .face $HOME/
+cp .gitconfig $HOME/
+cp .vimrc $HOME/
+cp .zshrc $HOME/
 cp -r .zsh $HONE/.zsh
 cp -a .config/. $HOME/.config/
 
