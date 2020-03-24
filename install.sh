@@ -36,11 +36,11 @@ echo
 echo "Copying the configuration files..."
 echo
 
-mkdir .zsh
-mkdir .config
-mkdir .icons
-
 cd
+mkdir $HOME/.zsh
+mkdir $HOME/.config
+mkdir $HOME/.icons
+
 git clone --recursive https://github.com/Fload2000/dotfiles
 cd dotfiles
 cp .face $HOME/
