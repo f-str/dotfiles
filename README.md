@@ -5,7 +5,7 @@ My personal configuration files for my Linux systems. Use at your own risk :D
 
 ## Installation
 
-For installing this configuration files on your system execute the following command (make shure `wget` and `yay` are installed):
+For installing this configuration files on your system execute the following command (make sure `wget` and `yay` are installed):
 ```sh
 $ wget -O - https://raw.githubusercontent.com/Fload2000/dotfiles/master/install.sh | bash
 ```
