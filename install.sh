@@ -37,22 +37,24 @@ echo "Copying the configuration files..."
 echo
 
 cd
-mkdir $HOME/.zsh
-mkdir $HOME/.config
-mkdir $HOME/.icons
+mkdir -p $HOME/.zsh
+mkdir -p $HOME/.config
+mkdir -p $HOME/.icons
 
 git clone --recursive https://github.com/Fload2000/dotfiles
 cd dotfiles
-cp .face $HOME/
-cp .gitconfig $HOME/
-cp .vimrc $HOME/
-cp .zshrc $HOME/
-cp -r .zsh $HONE/.zsh
-cp -r .icons $HOME/.icons
-cp -a .config/. $HOME/.config/
+cp -a .face $HOME/
+cp -a .gitconfig $HOME/
+cp -a .vimrc $HOME/
+cp -a .zshrc $HOME/
+cp -ar .zsh/. $HOME/.zsh/
+cp -ar .icons/. $HOME/.icons/
+cp -ar .config/. $HOME/.config/
 
 # Create directory for historyfiles
-mkdir $HOME/.zsh/history
+mkdir -p $HOME/.zsh/history
+
+rm -rf $HOME/dotfiles
 
 echo
 echo "Done!"
