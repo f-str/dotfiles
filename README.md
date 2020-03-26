@@ -6,8 +6,9 @@ My personal configuration files for my Linux systems. Use at your own risk :D
 ## Installation
 
 For installing this configuration files on your system execute the following command (make shure `wget` and `yay` are installed):
-
-`wget -O - http://github.com/Fload2000/dotfiles/blob/master/install.sh | bash`
+```sh
+$ wget -O - https://raw.githubusercontent.com/Fload2000/dotfiles/master/install.sh | bash
+```
 
 This install script will automatically install all requirements (which are listed below), clones the configuration files and moves them to the right directory.
 
