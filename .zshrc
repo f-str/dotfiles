@@ -88,6 +88,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=${ZSH}/history
 
+# Let background jobs running when closing the shell
+NO_HUP="true"
+
 # Set language environment
 export LANG=de_DE.UTF-8
 
