@@ -86,14 +86,13 @@ ENABLE_CORRECTION="true"
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=${ZSH}/history
+HISTFILE=$HOME/.zsh/history
 
 # Let background jobs running when closing the shell
 NO_HUP="true"
 
 # Set language environment
 export LANG=de_DE.UTF-8
-
 
 autoload -U compinit
 compinit -i
@@ -159,11 +158,9 @@ else
 fi
 
 # Aliases
-if [ -f ${ZSH}/.aliases ]; then
-    . ${ZSH}/.aliases
-fi
+source ${HOME}/.zsh/.aliases
 
-
+# Function for extracting archives
 extract() {
   if [ -f $1 ] ; then
     case $1 in
