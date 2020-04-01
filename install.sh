@@ -32,6 +32,16 @@ for PKG in "${PKGS[@]}"; do
     yay -S "$PKG" --noconfirm --needed
 done
 
+PIPS=(
+        'pynvim'
+        'jedi'
+)
+
+for PIP in "${PIPS[@]}"; do
+    echo "INSTALLING ${PIP}"
+    pip3 install "$PIP"
+done
+
 echo
 echo "Copying the configuration files..."
 echo
@@ -54,7 +64,11 @@ cp -ar .config/. $HOME/.config/
 # Create directory for historyfiles
 mkdir -p $HOME/.zsh/history
 
+# Remove the dotfiles directory
 rm -rf $HOME/dotfiles
+
+# Rebuild the font cache
+fc-cache -f
 
 echo
 echo "Done!"
