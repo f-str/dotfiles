@@ -61,9 +61,6 @@ cp -ar .zsh/. $HOME/.zsh/
 cp -ar .icons/. $HOME/.icons/
 cp -ar .config/. $HOME/.config/
 
-# Create directory for historyfiles
-mkdir -p $HOME/.zsh/history
-
 # Remove the dotfiles directory
 rm -rf $HOME/dotfiles
 
