@@ -184,3 +184,16 @@ extract() {
     echo "\`$1' is not a valid file"
   fi
 }
+
+# Function for cropping a page or multiple pages from a pdf-file
+pdfcrop() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.pdf)    pdftk $1 cat ${@:2} output output.pdf ;;
+      *)        echo "\`$1': is not a pdf-file"  ;;
+    esac
+  else
+    echo "\`$1' is not a valid file"
+  fi
+  echo "\`$1' successfully cropped."
+}

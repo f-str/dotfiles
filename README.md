@@ -38,3 +38,4 @@ This install script will automatically install all requirements (which are liste
 - [feh](https://wiki.archlinux.de/title/Feh)
 - [i3lock](https://i3wm.org/i3lock/)
 - [flameshot](https://flameshot.js.org)
+- [pdftk](https://www.archlinux.org/packages/community/any/pdftk/)
