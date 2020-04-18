@@ -30,3 +30,6 @@ alias pdfmerge='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepres
 
 # Shrink PDF size
 alias pdfshrink='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=shrinked.pdf'
+
+# Show all files when making a ls
+alias ls='ls -a'
