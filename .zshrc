@@ -197,3 +197,8 @@ pdfcrop() {
   fi
   echo "\`$1' successfully cropped."
 }
+
+# Function for getting the current weather delivered by wttr.in
+weather() {
+  curl wttr.in/${1}
+}
