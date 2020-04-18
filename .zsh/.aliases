@@ -33,3 +33,6 @@ alias pdfshrink='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/de
 
 # Show all files when making a ls
 alias ls='ls -a'
+
+# Determin public IP
+alias myip='wget http://checkip.dyndns.org -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1'
