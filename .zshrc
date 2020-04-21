@@ -202,3 +202,8 @@ pdfcrop() {
 weather() {
   curl wttr.in/${1}
 }
+
+# Function for faster gcc usage
+cgcc() {
+    gcc -Wall -Wextra -v -o ${1%.*} ${1}
+}
