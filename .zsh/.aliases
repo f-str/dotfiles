@@ -1,9 +1,6 @@
 # Create VPN Connection to University
 alias vpn='sudo openvpn --cd $HOME/.openvpn --config stud-ext.ovpn'
 
-# Create VPN Connection to Uni
-alias vpn='sudo openvpn --cd $HOME/.openvpn --config stud-ext.ovpn'
-
 # Change Git Profiles
 alias cgu='bash $HOME/.changeGitUser.sh'
 
