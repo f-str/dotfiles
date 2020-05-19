@@ -29,10 +29,13 @@ alias pdfmerge='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepres
 alias pdfshrink='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=shrinked.pdf'
 
 # Show all files when making a ls
-alias ls='ls -a'
+alias ls='ls -a --color=tty'
 
 # Determin public IP
 alias myip='wget http://checkip.dyndns.org -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1'
 
 # Tar with all needed params
 alias tarp='tar cfvz'
+
+# Remove all files from a directory but keep the directory structure alive
+alias cleandir='find . ! -type d -delete'
