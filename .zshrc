@@ -160,6 +160,9 @@ fi
 # Aliases
 source ${HOME}/.zsh/.aliases
 
+# Keybinds
+source ${HOME}/.zsh/.keybinds
+
 # Function for extracting archives
 extract() {
   if [ -f $1 ] ; then
