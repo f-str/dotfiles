@@ -93,11 +93,9 @@ Plug 'tomasr/molokai'
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
-
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
 
 " haskell
 "" Haskell Bundle
@@ -111,7 +109,6 @@ Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
 
-
 " html
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
@@ -119,23 +116,19 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
-
 " javascript
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
-
 
 " lua
 "" Lua Bundle
 Plug 'xolox/vim-lua-ftplugin'
 Plug 'xolox/vim-lua-inspect'
 
-
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
 
 " rust
 " Vim racer
@@ -143,7 +136,6 @@ Plug 'racer-rust/vim-racer'
 
 " Rust.vim
 Plug 'rust-lang/rust.vim'
-
 
 " scala
 if has('python')
@@ -153,15 +145,16 @@ endif
 " vim-scala
 Plug 'derekwyatt/vim-scala'
 
-
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 
-
 " vuejs
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
+
+" Support API Blueprint
+Plug 'kylef/apiblueprint.vim'
 
 " Support bundles
 Plug 'jgdavey/tslime.vim' " Send command from vim to a running tmux session
@@ -288,8 +281,6 @@ else
 
   
 endif
-
-
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -633,9 +624,6 @@ augroup vimrc-javascript
 augroup END
 
 
-" lua
-
-
 " python
 " vim-python
 augroup vimrc-python
@@ -675,10 +663,6 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
-
-
-" scala
-
 
 " typescript
 let g:yats_host_keyword = 1
@@ -742,29 +726,23 @@ endif
 
 " Completion
 
-set completeopt+=longest
-
-" Use buffer words as default tab completion
-let g:SuperTabDefaultCompletionType = '<c-x><c-p>'
-
 " Use deoplete
 let g:deoplete#enable_at_startup=1
+
+"let g:deoplete#enable_refresh_always = 1
+let g:deoplete#enable_ignore_case = 1
+"let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_camel_case = 1
+"let g:deoplete#file#enable_buffer_path = 1
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone,preview,noinsert
 
 let g:deoplete#sources#clang#libclang_path="/usr/lib64/llvm/7/lib64/libclang.so"
 let g:deoplete#sources#clang#clang_header="/usr/lib64/clang"
 
-let g:tmuxcomplete#trigger = ''
-
 let g:chromatica#libclang_path='/usr/lib64/llvm/7/lib64/libclang.so'
 "let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
-
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-if &filetype=='tex'
-  let g:deoplete#omni#input_patterns.tex=g:vimtex#re#deoplete
-endif
 
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'

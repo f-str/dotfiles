@@ -36,6 +36,7 @@ done
 PIPS=(
         'pynvim'
         'jedi'
+        'mypy'
 )
 
 for PIP in "${PIPS[@]}"; do
