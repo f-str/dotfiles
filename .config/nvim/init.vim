@@ -728,21 +728,13 @@ endif
 
 " Use deoplete
 let g:deoplete#enable_at_startup=1
-
-"let g:deoplete#enable_refresh_always = 1
 let g:deoplete#enable_ignore_case = 1
-"let g:deoplete#enable_smart_case = 1
 let g:deoplete#enable_camel_case = 1
-"let g:deoplete#file#enable_buffer_path = 1
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview,noinsert
 
-let g:deoplete#sources#clang#libclang_path="/usr/lib64/llvm/7/lib64/libclang.so"
-let g:deoplete#sources#clang#clang_header="/usr/lib64/clang"
-
-let g:chromatica#libclang_path='/usr/lib64/llvm/7/lib64/libclang.so'
-"let g:chromatica#enable_at_startup=1
-let g:chromatica#responsive_mode=1
+let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-10/lib/libclang.so"
+let g:deoplete#sources#clang#clang_header="/usr/lib/clang"
 
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
