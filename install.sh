@@ -8,6 +8,7 @@ PKGS=(
         'git'
         'tmux'
         'zsh'
+        'neovim'
         'autojump'
         'python'
         'pip'
