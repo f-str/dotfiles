@@ -20,19 +20,19 @@ for PKG in "${PKGS_Plasma[@]}"; do
 done
 
 
-
 echo
 echo "Installing Office..."
 echo
 
 PKGS_Office=(
+    'ms-office-online'
     'libreoffice-fresh'
     'libreoffice-fresh-de'
     'hunspell'
     'hunspell-de'
     'hyphen'
     'hypen-de'
-    'libmythen' 
+    'libmythen'
     'mythes-de'
 )
 
@@ -77,8 +77,10 @@ echo "Installing Browsers..."
 echo
 
 PKGS_Browser=(
+    'chromium'
     'google-chrome'
     'torbrowser-launcher'
+    'brave'
 )
 
 for PKG in "${PKGS_Browser[@]}"; do
@@ -128,7 +130,18 @@ PKGS_Programming=(
     'yarn'
     'npm'
     'cmake'
+    'boost'
     'postman'
+    'okteta'
+    'arduino'
+    'sqlite'
+    'sqlitebrowser'
+    'docker'
+    'nginx'
+    'scenebuilder'
+    'android-sdk'
+    'flutter'
+    'burpsuite'
 )
 
 for PKG in "${PKGS_Programming[@]}"; do
@@ -150,6 +163,8 @@ PKGS_IDEs=(
     'rider' 
     'codeblocks'
     'code'
+    'datagrip'
+    'android-studio'
 )
 
 for PKG in "${PKGS_IDEs[@]}"; do
@@ -166,6 +181,7 @@ PGKS_Image=(
     'gimp'
     'krita'
     'eog'
+    'gwenview'
 )
 
 for PKG in "${PKGS_Image[@]}"; do
@@ -175,14 +191,33 @@ done
 
 
 echo
-echo "Installling video processing programs..."
+echo "Installing video processing programs..."
 echo
 
 PKGS_Video=(
     'kdenlive'
+    'vlc'
 )
 
 for PKG in "${PKGS_Video[@]}"; do
+    echo "INSTALLING ${PKG}"
+    yay -S "$PKG" --noconfirm --needed
+done
+
+
+echo
+echo "Installing audio programs..."
+echo
+
+PKGS_Audio=(
+    'clementine'
+    'bitwig-studio'
+    'audacity'
+    'spotify'
+    'spotify-tui'
+)
+
+for PKG in "${PKGS_Audio[@]}"; do
     echo "INSTALLING ${PKG}"
     yay -S "$PKG" --noconfirm --needed
 done
@@ -233,7 +268,34 @@ PKGS_Gaming=(
     'steam'
     'lutris'
     'minecraft-launcher'
+    'feedthebeast'
+    'minecraft-technic-launcher'
 )
+
+for PKG in "${PKGS_Gaming[@]}"; do
+    echo "INSTALLING ${PKG}"
+    yay -S "$PKG" --noconfirm --needed
+done
+
+
+echo
+echo "Installing chatting programs..."
+echo
+
+PKGS_Chatting=(
+    'discord'
+    'betterdiscordctl'
+    'element-dekstop'
+    'chatty'
+    'telegram-desktop'
+    'zoom'
+    'skypeforlinux-preview-bin'
+)
+
+for PKG in "${PKGS_Chatting[@]}"; do
+    echo "INSTALLING ${PKG}"
+    yay -S "$PKG" --noconfirm --needed
+done
 
 
 echo
@@ -246,6 +308,22 @@ PKGS_Utility=(
     'dia'
     'clinfo'
     'blender'
+    'freecad'
+    'filelight'
+    'ktorrent'
+    'neofetch'
+    'kcalc'
+    'openssh'
+    'gnupg'
+    'curl'
+    'wget'
+    'tar'
+    'youtube-dl'
+    'obs'
+    'geogebra'
+    'fritzing'
+    'discover'
+    'packagekit-qt5'
 )
 
 for PKG in "${PKGS_Utility[@]}"; do
