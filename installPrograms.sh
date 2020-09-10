@@ -128,8 +128,19 @@ PKGS_Programming=(
     'rust'
     'cargo'
     'yarn'
+    'nuget'
+    'gradle'
+    'maven'
     'npm'
     'cmake'
+    'valgrind'
+    'cppcheck'
+    'splint'
+    'make'
+    'm4'
+    'bison'
+    'gdb'
+    'gcc'
     'boost'
     'postman'
     'okteta'
@@ -142,6 +153,13 @@ PKGS_Programming=(
     'android-sdk'
     'flutter'
     'burpsuite'
+    'mono'
+    'mono-tools'
+    'wireshark-qt'
+    'wireshark-cli'
+    'tomcat9'
+    'docker'
+    'docker-compose'
 )
 
 for PKG in "${PKGS_Programming[@]}"; do
@@ -182,6 +200,8 @@ PGKS_Image=(
     'krita'
     'eog'
     'gwenview'
+    'inkscape'
+    'blender'
 )
 
 for PKG in "${PKGS_Image[@]}"; do
@@ -290,6 +310,7 @@ PKGS_Chatting=(
     'telegram-desktop'
     'zoom'
     'skypeforlinux-preview-bin'
+    'teamspeak3'
 )
 
 for PKG in "${PKGS_Chatting[@]}"; do
@@ -305,6 +326,7 @@ echo
 PKGS_Utility=(
     'virtualbox'
     'radeontop'
+    'corectrl'
     'dia'
     'clinfo'
     'blender'
@@ -314,6 +336,7 @@ PKGS_Utility=(
     'neofetch'
     'kcalc'
     'openssh'
+    'openvpn'
     'gnupg'
     'curl'
     'wget'
@@ -324,9 +347,32 @@ PKGS_Utility=(
     'fritzing'
     'discover'
     'packagekit-qt5'
+    'hashcat'
+    'netcat'
+    'lm_sensors'
+    'speedtest-cli'
+    'ckb-next'
+    'piper'
+    'parted'
+    'gparted'
+    'skanlite'
 )
 
 for PKG in "${PKGS_Utility[@]}"; do
+    echo "INSTALLING ${PKG}"
+    yay -S "$PKG" --noconfirm --needed
+done
+
+
+echo
+echo "Installing printer drivers..."
+echo
+
+PKGS_Printer=(
+    'epson-inkjet-printer-nx420'
+)
+
+for PKG in "${PKGS_Printer[@]}"; do
     echo "INSTALLING ${PKG}"
     yay -S "$PKG" --noconfirm --needed
 done
