@@ -13,12 +13,12 @@ $ wget -O - https://raw.githubusercontent.com/Fload2000/dotfiles/master/install.
 This install script will automatically install all requirements (which are listed below), clones the configuration files and moves them to the right directory.
 
 
-## Requirements
+## Requirements of the dotfiles
 
 (currently not all are listed)
 
 - [tmux](https://wiki.archlinux.org/index.php/Tmux)
-- [pyhton](https://wiki.archlinux.org/index.php/Python)
+- [python](https://wiki.archlinux.org/index.php/Python)
 - [autojump](https://wiki.archlinux.org/index.php/Bash#Autojump)
 - [neovim](https://wiki.archlinux.org/index.php/Neovim)
 - [zsh](https://wiki.archlinux.org/index.php/Zsh)
@@ -39,3 +39,9 @@ This install script will automatically install all requirements (which are liste
 - [i3lock](https://i3wm.org/i3lock/)
 - [flameshot](https://flameshot.js.org)
 - [pdftk](https://www.archlinux.org/packages/community/any/pdftk/)
+
+
+## My currently used programs
+
+With the included script `installPrograms.sh` it is possible to install all the programs I use on a daily drive.  
+This is mainly for me to speed up the install process of new OS installs.
