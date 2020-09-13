@@ -27,6 +27,8 @@ PKGS=(
         'i3lock'
         'flameshot'
         'pdftk'
+        'neofetch'
+        'w3m'
 )
 
 for PKG in "${PKGS[@]}"; do

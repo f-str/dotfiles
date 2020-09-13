@@ -39,6 +39,8 @@ This install script will automatically install all requirements (which are liste
 - [i3lock](https://i3wm.org/i3lock/)
 - [flameshot](https://flameshot.js.org)
 - [pdftk](https://www.archlinux.org/packages/community/any/pdftk/)
+- [neofetch](https://www.archlinux.org/packages/community/any/neofetch/)
+- [w3m](https://www.archlinux.org/packages/extra/x86_64/w3m/)
 
 
 ## My currently used programs
