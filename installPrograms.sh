@@ -133,6 +133,7 @@ PKGS_Programming=(
     'maven'
     'npm'
     'cmake'
+    'extra-cmake-modules'
     'valgrind'
     'cppcheck'
     'splint'
