@@ -41,6 +41,7 @@ This install script will automatically install all requirements (which are liste
 - [pdftk](https://www.archlinux.org/packages/community/any/pdftk/)
 - [neofetch](https://www.archlinux.org/packages/community/any/neofetch/)
 - [w3m](https://www.archlinux.org/packages/extra/x86_64/w3m/)
+- [ranger](https://wiki.archlinux.org/index.php/Ranger)
 
 
 ## My currently used programs

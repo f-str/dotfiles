@@ -29,6 +29,7 @@ PKGS=(
         'pdftk'
         'neofetch'
         'w3m'
+        'ranger'
 )
 
 for PKG in "${PKGS[@]}"; do
