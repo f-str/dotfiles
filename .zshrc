@@ -43,7 +43,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/rust
   zgen oh-my-zsh plugins/docker
   zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/go
   zgen oh-my-zsh plugins/golang
   zgen oh-my-zsh plugins/gradle
   zgen oh-my-zsh plugins/mvn
