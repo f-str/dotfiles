@@ -60,7 +60,6 @@ git clone --recursive https://github.com/Fload2000/dotfiles
 cd dotfiles
 cp -a .face $HOME/
 cp -a .gitconfig $HOME/
-cp -a .vimrc $HOME/
 cp -a .zshrc $HOME/
 cp -ar .zsh/. $HOME/.zsh/
 cp -ar .icons/. $HOME/.icons/
@@ -68,6 +67,9 @@ cp -ar .config/. $HOME/.config/
 
 # Remove the dotfiles directory
 rm -rf $HOME/dotfiles
+
+# Change Shell to zsh
+chsh -s /bin/zsh
 
 # Rebuild the font cache
 fc-cache -f
