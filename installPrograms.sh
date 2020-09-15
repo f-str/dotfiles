@@ -80,7 +80,6 @@ PKGS_Browser=(
     'chromium'
     'google-chrome'
     'torbrowser-launcher'
-    'brave'
 )
 
 for PKG in "${PKGS_Browser[@]}"; do
