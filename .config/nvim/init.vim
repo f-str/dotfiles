@@ -653,7 +653,6 @@ let g:airline#extensions#virtualenv#enabled = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
 
@@ -674,6 +673,9 @@ let g:yats_host_keyword = 1
 let g:vue_disable_pre_processors=1
 " vim vue plugin
 let g:vim_vue_plugin_load_full_syntax = 1
+
+" LaTeX
+let g:tex_flavor= 'latex'
 
 
 "*****************************************************************************
@@ -733,7 +735,7 @@ let g:deoplete#enable_camel_case = 1
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview,noinsert
 
-let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-10/lib/libclang.so"
+let g:deoplete#sources#clang#libclang_path="/usr/lib/libclang.so"
 let g:deoplete#sources#clang#clang_header="/usr/lib/clang"
 
 let g:python_host_prog = '/usr/bin/python2'
