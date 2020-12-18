@@ -10,11 +10,42 @@ echo "Installing KDE Plasma interface related stuff..."
 echo
 
 PKGS_Plasma=(
+    'plasma-wayland-session'
     'latte-dock'
     'guake'
+    'kde-graphics-meta'
+    'kde-system-meta'
+    'dolphin-plugins'
+    'kompare'
+    'breeze-enhanced-git'
+    'colord-kde'
+    'kde-applications'
+    'print-manager'
+    'pulseaudio'
+    'kdeconnect'
 )
 
 for PKG in "${PKGS_Plasma[@]}"; do
+    echo "INSTALLING ${PKG}"
+    yay -S "$PKG" --noconfirm --needed
+done
+
+
+echo
+echo "Installing Fonts..."
+echo
+
+PKGS_Fonts=(
+    'noto-fonts'
+    'noto-fonts-emoji'
+    'terminus-font'
+    'ttf-dejavu'
+    'ttf-liberation'
+    'ttf-droid'
+    'ttf-jetbrains-mono'
+)
+
+for PKG in "${PKGS_Fonts[@]}"; do
     echo "INSTALLING ${PKG}"
     yay -S "$PKG" --noconfirm --needed
 done
@@ -107,6 +138,8 @@ echo "Installing Java..."
 echo
 
 PKGS_Java=(
+    'jdk14-openjdk'
+    'jdk15-openjdk'
     'jdk11-openjdk'
     'jdk8-openjdk'
     'java-openjfx'
@@ -124,8 +157,7 @@ echo "Installing programming stuff..."
 echo
 
 PKGS_Programming=(
-    'rust'
-    'cargo'
+    'rustup'
     'yarn'
     'nuget'
     'gradle'
@@ -142,7 +174,7 @@ PKGS_Programming=(
     'gdb'
     'gcc'
     'boost'
-    'postman'
+    'postman-bin'
     'okteta'
     'arduino'
     'sqlite'
@@ -159,6 +191,12 @@ PKGS_Programming=(
     'tomcat9'
     'docker'
     'docker-compose'
+    'lldb'
+    'github-cli'
+    'python-pip'
+    'base-devel' 
+    'xclip'
+    'neovim'
 )
 
 for PKG in "${PKGS_Programming[@]}"; do
@@ -172,16 +210,11 @@ echo "Installing IDEs..."
 echo 
 
 PKGS_IDEs=(
-    'intellij-idea-ultimate-edition'
-    'pycharm-professional'
-    'webstorm'
-    'clion'
-    'goland'
-    'rider' 
     'codeblocks'
     'code'
-    'datagrip'
     'android-studio'
+    'eclipse-common'
+    'eclipse-jee'
 )
 
 for PKG in "${PKGS_IDEs[@]}"; do
@@ -201,6 +234,7 @@ PGKS_Image=(
     'gwenview'
     'inkscape'
     'blender'
+    'eog'
 )
 
 for PKG in "${PKGS_Image[@]}"; do
@@ -216,6 +250,9 @@ echo
 PKGS_Video=(
     'kdenlive'
     'vlc'
+    'libdvdread'
+    'libdvdcss'
+    'libdvdnav'
 )
 
 for PKG in "${PKGS_Video[@]}"; do
@@ -271,6 +308,16 @@ PKGS_Mesa=(
     'lib32-libva-mesa-driver'
     'mesa-vdpau'
     'lib32-mesa-vdpau'
+    'opencl-mesa'
+    'ocl-icd'
+    'opencl-headers'
+    'libva-mesa-driver'
+    'vainfo'
+    'libva-utils'
+    'vdpauinfo'
+    'vulkan-icd-loader'
+    'amdvlk'
+    'lib32-amdvlk'
 )
 
 for PKG in "${PKGS_Mesa[@]}"; do
@@ -323,12 +370,13 @@ echo "Installing utility programs..."
 echo 
 
 PKGS_Utility=(
+    'htop'
+    'gotop'
     'virtualbox'
     'radeontop'
     'corectrl'
     'dia'
     'clinfo'
-    'blender'
     'freecad'
     'filelight'
     'ktorrent'
@@ -355,6 +403,15 @@ PKGS_Utility=(
     'parted'
     'gparted'
     'skanlite'
+    'snapper'
+    'snapper-gui-git'
+    'xorgconfig'
+    'qt5ct'
+    'grub-customizer'
+    'xorg-server-devel'
+    'ntfs-3g'
+    'xorg'
+    'xterm'
 )
 
 for PKG in "${PKGS_Utility[@]}"; do
