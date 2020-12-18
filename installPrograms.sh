@@ -352,7 +352,6 @@ PKGS_Chatting=(
     'discord'
     'betterdiscordctl'
     'element-desktop'
-    'chatty'
     'telegram-desktop'
     'zoom'
     'skypeforlinux-preview-bin'
