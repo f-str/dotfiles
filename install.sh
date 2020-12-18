@@ -69,9 +69,6 @@ cp -ar .config/. $HOME/.config/
 # Remove the dotfiles directory
 rm -rf $HOME/dotfiles
 
-# Change Shell to zsh
-chsh -s /bin/zsh
-
 # Rebuild the font cache
 fc-cache -f
 
