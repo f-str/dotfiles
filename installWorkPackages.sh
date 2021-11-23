@@ -15,15 +15,11 @@ echo
 echo "Installing KDE Plasma interface related stuff..."
 echo
 PKGS_Plasma=(
-    'plasma-wayland-session'
     'latte-dock'
     'guake'
     'kde-system-meta'
     'dolphin-plugins'
     'kompare'
-    'breeze-enhanced-git'
-    'colord-kde'
-    'kde-applications'
     'print-manager'
     'pulseaudio'
 )
