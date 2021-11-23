@@ -94,7 +94,7 @@ echo
 PKGS_LaTeX=(
     'texlive-most'
     'texlive-lang'
-    'kile'
+    'texstudio'
 )
 
 for PKG in "${PKGS_LaTeX[@]}"; do
@@ -213,8 +213,6 @@ PKGS_IDEs=(
     'codeblocks'
     'code'
     'android-studio'
-    'eclipse-common'
-    'eclipse-jee'
 )
 
 for PKG in "${PKGS_IDEs[@]}"; do
@@ -266,11 +264,8 @@ echo "Installing audio programs..."
 echo
 
 PKGS_Audio=(
-    'clementine'
-    'bitwig-studio'
     'audacity'
     'spotify'
-    'spotify-tui'
 )
 
 for PKG in "${PKGS_Audio[@]}"; do
