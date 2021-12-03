@@ -15,29 +15,12 @@ echo
 echo "Installing KDE Plasma interface related stuff..."
 echo
 PKGS_Plasma=(
-    'latte-dock'
-    'guake'
-    'kde-system-meta'
     'dolphin-plugins'
     'kompare'
     'print-manager'
     'pulseaudio'
 )
 installPackages "${PKGS_Plasma[@]}"
-
-echo
-echo "Installing Fonts..."
-echo
-PKGS_Fonts=(
-    'noto-fonts'
-    'noto-fonts-emoji'
-    'terminus-font'
-    'ttf-dejavu'
-    'ttf-liberation'
-    'ttf-droid'
-    'ttf-jetbrains-mono'
-)
-installPackages "${PKGS_Fonts[@]}"
 
 echo
 echo "Installing Office..."
@@ -62,7 +45,6 @@ PKGS_Browser=(
     'firefox'
     'chromium'
     'google-chrome'
-    'torbrowser-launcher'
 )
 installPackages "${PKGS_Browser[@]}"
 
@@ -95,9 +77,6 @@ PKGS_Programming=(
     'npm'
     'gcc'
     'postman-bin'
-    'sqlite'
-    'sqlitebrowser'
-    'nginx'
     'docker'
     'docker-compose'
     'python-pip'
@@ -124,17 +103,6 @@ PGKS_Image=(
     'gwenview'
 )
 installPackages "${PKGS_Image[@]}"
-
-echo
-echo "Installing video processing programs..."
-echo
-PKGS_Video=(
-    'dragon'
-    'libdvdread'
-    'libdvdcss'
-    'libdvdnav'
-)
-installPackages "${PKGS_Video[@]}"
 
 echo
 echo "Installing audio programs..."
@@ -178,19 +146,13 @@ echo
 echo "Installing utility programs..."
 echo 
 PKGS_Utility=(
-    'htop'
-    'gotop'
-    'dia'
     'filelight'
     'neofetch'
     'kcalc'
-    'openssh'
-    'openvpn'
     'gnupg'
     'curl'
     'wget'
     'tar'
-    'discover'
     'hashcat'
     'netcat'
     'lm_sensors'

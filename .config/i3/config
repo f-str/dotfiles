@@ -15,27 +15,27 @@ exec "setxkbmap -layout de"
 set $mod Mod4
 
 # Set gaps
-gaps inner 15
-gaps outer 20
+gaps inner 10
+gaps outer 5
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Lock
+set $i3lockwall sh ~/.config/i3/scripts/lock.sh
+bindsym $mod+l exec --no-startup-id $i3lockwall
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -96,23 +96,40 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
+
+# assign workspaces
+assign [class="jetbrains-idea code"] $ws1
+assign [class="firefox"] $ws2
+assign [class="Google-chrome"] $ws3
+#assign [class=""] $ws4
+#assign [class=""] $ws5
+assign [class="rocketchat"] $ws6
+#assign [class=""] $ws7
+#assign [class=""] $ws8
+#assign [class=""] $ws9
+assign [class="Thunderbird"] $ws10
+
+# auto move some window classes
+for_window [class="firefox"] move to workspace $ws2
+for_window [class="Google-chrome"] move to workspace $ws3
+for_window [class="Thunderbird"] move to workspace $ws10
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -183,15 +200,38 @@ for_window [class=".*"] border pixel 2
 hide_edge_borders both
 
 # Picom/Compton
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
+#exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
-# Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Set screen resolution
+exec_always --no-startup-id xrandr --newmode "2560x1440_60.00" 311.83  2560 2744 3024 3488  1440 1441 1444 1490  -HSync +Vsync
+exec_always --no-startup-id xrandr --addmode Virtual-1 2560x1440_60.00
+exec_always --no-startup-id xrandr --output Virtual-1 --mode 2560x1440_60.00
 
 # Use feh to set wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-scale /home/florian/.config/wallpapers/wallpaper.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/.config/wallpapers/wallpaper.jpg
 
 # Execute Flameshot
-exec_always flameshot
+exec_always --no-startup-id flameshot
 bindsym Print exec flameshot gui
-bindsym Shift+Print exec flameshot screen -r -c
+bindsym $mod+Shift+s exec flameshot screen -r -c
+
+# i3status-rustS
+bar {
+    strip_workspace_numbers yes
+    font pango:DejaVu Sans Mono, Font Awesome 5 Brands Regular, Font Awesome 5 Free Solid, FontAwesome 11
+    position top
+    status_command /usr/bin/i3status-rs $HOME/.config/i3status-rust/config.toml
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+}
+
+
+exec --no-startup-id firefox
+exec --no-startup-id thunderbird
