@@ -86,6 +86,10 @@ PKGS_Programming=(
 )
 installPackages "${PKGS_Programming[@]}"
 
+# Set default toolchain of Rust
+rustup toolchain install stable
+rustup default stable
+
 echo
 echo "Installing IDEs..."
 echo 

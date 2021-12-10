@@ -228,7 +228,6 @@ echo
 PGKS_Image=(
     'gimp'
     'krita'
-    'eog'
     'gwenview'
     'inkscape'
     'blender'
