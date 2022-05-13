@@ -43,6 +43,7 @@ PKGS=(
         'ttf-liberation'
         'ttf-droid'
         'ttf-jetbrains-mono'
+        'exa'
 )
 
 for PKG in "${PKGS[@]}"; do
