@@ -60,6 +60,7 @@ echo
 echo "Installing Java..."
 echo
 PKGS_Java=(
+    'jdk19-openjdk'
     'jdk17-openjdk'
     'jdk11-openjdk'
     'jdk8-openjdk'
@@ -143,6 +144,7 @@ echo
 PKGS_Chatting=(
     'rocketchat-desktop'
     'zoom'
+    'discord'
 )
 installPackages "${PKGS_Chatting[@]}"
 

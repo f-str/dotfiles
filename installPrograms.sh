@@ -1,5 +1,12 @@
 #!/bin/bash
 
+function installPackages() {
+    for PKG in "$@"; do
+        echo "INSTALLING ${PKG}"
+        yay -S "$PKG" --noconfirm --needed
+    done
+}
+
 echo
 echo "Installing all programs..."
 echo
@@ -8,7 +15,6 @@ echo
 echo 
 echo "Installing KDE Plasma interface related stuff..."
 echo
-
 PKGS_Plasma=(
     'plasma-wayland-session'
     'latte-dock'
@@ -24,17 +30,11 @@ PKGS_Plasma=(
     'pulseaudio'
     'kdeconnect'
 )
-
-for PKG in "${PKGS_Plasma[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Plasma[@]}"
 
 echo
 echo "Installing Fonts..."
 echo
-
 PKGS_Fonts=(
     'noto-fonts'
     'noto-fonts-emoji'
@@ -44,17 +44,11 @@ PKGS_Fonts=(
     'ttf-droid'
     'ttf-jetbrains-mono'
 )
-
-for PKG in "${PKGS_Fonts[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Fonts[@]}"
 
 echo
 echo "Installing Office..."
 echo
-
 PKGS_Office=(
     'ms-office-online'
     'libreoffice-fresh'
@@ -66,94 +60,58 @@ PKGS_Office=(
     'libmythen'
     'mythes-de'
 )
-
-for PKG in "${PKGS_Office[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Office[@]}"
 
 echo
 echo "Installing PDF-Programs..."
 echo
-
 PKGS_PDF=(
     'okular'
 )
-
-for PKG in "${PKGS_PDF[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_PDF[@]}"
 
 echo
 echo "Installing LaTeX packages..."
 echo
-
 PKGS_LaTeX=(
     'texlive-most'
     'texlive-lang'
     'texstudio'
 )
-
-for PKG in "${PKGS_LaTeX[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_LaTeX[@]}"
 
 echo
 echo "Installing Browsers..."
 echo
-
 PKGS_Browser=(
     'chromium'
     'google-chrome'
     'torbrowser-launcher'
 )
-
-for PKG in "${PKGS_Browser[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Browser[@]}"
 
 echo
 echo "Installing Mail Clients..."
-echo 
-
+echo
 PKGS_Mail=(
     'thunderbird'
 )
-
-for PKG in "${PKGS_Mail[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Mail[@]}"
 
 echo
 echo "Installing Java..."
 echo
-
 PKGS_Java=(
     'jdk17-openjdk'
     'jdk19-openjdk'
     'jdk11-openjdk'
     'jdk8-openjdk'
 )
-
-for PKG in "${PKGS_Java[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Java[@]}"
 
 echo
 echo "Installing programming stuff..."
 echo
-
 PKGS_Programming=(
     'rustup'
     'yarn'
@@ -201,34 +159,27 @@ PKGS_Programming=(
     'helm'
     'kubectx'
 )
+installPackages "${PKGS_Programming[@]}"
 
-for PKG in "${PKGS_Programming[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
+# Set default toolchain of Rust
+rustup toolchain install stable
+rustup default stable
 
 
 echo
 echo "Installing IDEs..."
-echo 
-
+echo
 PKGS_IDEs=(
     'codeblocks'
     'code'
     'android-studio'
     'jetbrains-toolbox'
 )
-
-for PKG in "${PKGS_IDEs[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_IDEs[@]}"
 
 echo
 echo "Installing image processing programs..."
 echo
-
 PGKS_Image=(
     'gimp'
     'krita'
@@ -237,17 +188,11 @@ PGKS_Image=(
     'blender'
     'eog'
 )
-
-for PKG in "${PKGS_Image[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Image[@]}"
 
 echo
 echo "Installing video processing programs..."
 echo
-
 PKGS_Video=(
     'kdenlive'
     'vlc'
@@ -255,47 +200,29 @@ PKGS_Video=(
     'libdvdcss'
     'libdvdnav'
 )
-
-for PKG in "${PKGS_Video[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Video[@]}"
 
 echo
 echo "Installing audio programs..."
 echo
-
 PKGS_Audio=(
     'audacity'
     'spotify'
 )
-
-for PKG in "${PKGS_Audio[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Audio[@]}"
 
 echo
 echo "Installing Wine..."
 echo
-
 PKGS_Wine=(
     'wine'
     'winetricks'
 )
-
-for PKG in "${PKGS_Wine[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Wine[@]}"
 
 echo
 echo "Installing Mesa..."
 echo
-
 PKGS_Mesa=(
     'mesa'
     'lib32-mesa'
@@ -317,17 +244,11 @@ PKGS_Mesa=(
     'amdvlk'
     'lib32-amdvlk'
 )
-
-for PKG in "${PKGS_Mesa[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Mesa[@]}"
 
 echo
 echo "Installing gaming programs..."
 echo
-
 PKGS_Gaming=(
     'steam'
     'lutris'
@@ -336,17 +257,11 @@ PKGS_Gaming=(
     'minecraft-technic-launcher'
     'heroic-games-launcher-bin'
 )
-
-for PKG in "${PKGS_Gaming[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Gaming[@]}"
 
 echo
 echo "Installing chatting programs..."
 echo
-
 PKGS_Chatting=(
     'discord'
     'betterdiscordctl'
@@ -356,17 +271,11 @@ PKGS_Chatting=(
     'skypeforlinux-preview-bin'
     'teamspeak3'
 )
-
-for PKG in "${PKGS_Chatting[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Chatting[@]}"
 
 echo
 echo "Installing utility programs..."
 echo 
-
 PKGS_Utility=(
     'htop'
     'gotop'
@@ -413,26 +322,15 @@ PKGS_Utility=(
     'bashtop'
     'powertop'
 )
-
-for PKG in "${PKGS_Utility[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Utility[@]}"
 
 echo
 echo "Installing printer drivers..."
 echo
-
 PKGS_Printer=(
     'epson-inkjet-printer-nx420'
 )
-
-for PKG in "${PKGS_Printer[@]}"; do
-    echo "INSTALLING ${PKG}"
-    yay -S "$PKG" --noconfirm --needed
-done
-
+installPackages "${PKGS_Printer[@]}"
 
 echo
 echo "Done!"
