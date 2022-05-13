@@ -138,12 +138,10 @@ echo "Installing Java..."
 echo
 
 PKGS_Java=(
-    'jdk14-openjdk'
-    'jdk15-openjdk'
+    'jdk17-openjdk'
+    'jdk19-openjdk'
     'jdk11-openjdk'
     'jdk8-openjdk'
-    'java-openjfx'
-    'java11-openjfx'
 )
 
 for PKG in "${PKGS_Java[@]}"; do
@@ -197,6 +195,11 @@ PKGS_Programming=(
     'base-devel' 
     'xclip'
     'neovim'
+    'ghc'
+    'cabal-install'
+    'kubectl'
+    'helm'
+    'kubectx'
 )
 
 for PKG in "${PKGS_Programming[@]}"; do
@@ -213,6 +216,7 @@ PKGS_IDEs=(
     'codeblocks'
     'code'
     'android-studio'
+    'jetbrains-toolbox'
 )
 
 for PKG in "${PKGS_IDEs[@]}"; do
@@ -330,6 +334,7 @@ PKGS_Gaming=(
     'minecraft-launcher'
     'feedthebeast'
     'minecraft-technic-launcher'
+    'heroic-games-launcher-bin'
 )
 
 for PKG in "${PKGS_Gaming[@]}"; do
@@ -381,7 +386,7 @@ PKGS_Utility=(
     'curl'
     'wget'
     'tar'
-    'youtube-dl'
+    'yt-dlp'
     'obs-studio'
     'geogebra'
     'fritzing'
@@ -405,6 +410,8 @@ PKGS_Utility=(
     'ntfs-3g'
     'xorg'
     'xterm'
+    'bashtop'
+    'powertop'
 )
 
 for PKG in "${PKGS_Utility[@]}"; do
