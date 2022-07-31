@@ -8,6 +8,8 @@ input type:keyboard {
     xkb_options grp:alt_shift_toggle
     xkb_numlock enabled
 }
+# Enable Numpad
+input * xkb_numlock enable
 
 # Touchpad
 input type:touchpad {
@@ -48,8 +50,11 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym $mod+d exec kitty --class 'launcher' --name 'test' zsh -ic 'compgen -c | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
+bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
 for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
+
+# Start small centered terminal
+bindsym $mod+Shift+Return exec kitty --class 'launcher'
 
 # Reload config
 bindsym $mod+Shift+r reload
@@ -130,7 +135,7 @@ assign [class="firefox"] $ws2
 assign [class="Google-chrome"] $ws3
 #assign [class=""] $ws4
 #assign [class=""] $ws5
-assign [class="rocketchat"] $ws6
+assign [class="discord"] $ws6
 #assign [class=""] $ws7
 #assign [class=""] $ws8
 #assign [class=""] $ws9
@@ -213,6 +218,7 @@ bar {
     font pango:DejaVu Sans Mono, Font Awesome 5 Free Solid, 
     position top
     status_command /usr/bin/i3status-rs $HOME/.config/i3status-rust/config.toml
+    pango_markup enabled
     colors {
         separator #666666
         background #222222
@@ -227,6 +233,13 @@ bar {
 # Wallpaper
 output "*" bg /home/florian/Nextcloud/Bilder/Wallpaper/7uNhWH7.png fill
 
+# Execute needed services
+# exec --no-startup-id waybar
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id dunst
+exec --no-startup-id udiskie -s 
+
 # Execute Flameshot
 exec --no-startup-id flameshot
 bindsym Print exec flameshot gui
@@ -235,10 +248,8 @@ bindsym $mod+Shift+s exec flameshot screen -r -c
 # Execute Programs
 exec --no-startup-id firefox
 exec --no-startup-id thunderbird
-exec --no-startup-id nextcloud
-exec --no-startup-id corectrl
-exec --no-startup-id nm-applet --indicator
-exec --no-startup-id dunst
-exec --no-startup-id udiskie -s 
+# exec --no-startup-id nextcloud
+# exec --no-startup-id corectrl
+# exec --no-startup-id jetbrains-toolbox
 
 include /etc/sway/config.d/*
