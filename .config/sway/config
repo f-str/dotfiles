@@ -17,6 +17,9 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+# Set superkey
+set $mod Mod4
+
 # Special Keys
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -37,11 +40,10 @@ exec --no-startup-id swayidle -w \
 	resume 'swaymsg "output * dpms on"' \
 	before-sleep 'swaylock -f -c 000000'
 
+bindsym $mod+l exec swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color ff8700 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2
+
 # Clipboard
 exec wl-pate -t text --watch clipman store --no-persist
-
-# Set superkey.
-set $mod Mod4
 
 # Terminal
 bindsym $mod+Return exec $terminal
@@ -50,8 +52,9 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
-for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
+# bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | grep -x "^[a-zA-Z]*" | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
+# for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
+bindsym $mod+d exec fuzzel -I 
 
 # Start small centered terminal
 bindsym $mod+Shift+Return exec kitty --class 'launcher'
@@ -240,10 +243,11 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id dunst
 exec --no-startup-id udiskie -s 
 
+# Kwallet
+exec --no-startup-id /usr/lib/pam_kwallet_init
+
 # Execute Flameshot
-exec --no-startup-id flameshot
-bindsym Print exec flameshot gui
-bindsym $mod+Shift+s exec flameshot screen -r -c
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
 # Execute Programs
 exec --no-startup-id firefox
