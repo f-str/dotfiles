@@ -58,20 +58,21 @@ if ! zgen saved; then
   zgen load Vifon/deer
   zgen load zsh-users/zaw
   zgen load clvv/fasd
+  #zgen load psprint/zsh-navigation-tools
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load trapd00r/zsh-syntax-highlighting-filetypes
   zgen load zsh-users/zsh-history-substring-search
   zgen load tarruda/zsh-autosuggestions
   
   # theme
-  zgen load f-str/agnoster-zsh-theme
+  zgen load Fload2000/agnoster-zsh-theme
 
   # generate the init script from plugins above
   zgen save
 fi
 
 # load theme
-source "${ZGEN}/f-str/agnoster-zsh-theme-master/agnoster.zsh-theme"
+source "${ZGEN}/Fload2000/agnoster-zsh-theme-master/agnoster.zsh-theme"
 
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -147,6 +148,8 @@ zstyle ':completion:*' cache-path ~/.cache/zsh
 
 
 # Preferred editor for local and remote sessions
+export VISUAL=nvim;
+export EDITOR=nvim;
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
@@ -158,9 +161,6 @@ source ${HOME}/.zsh/.aliases
 
 # Keybinds
 source ${HOME}/.zsh/.keybinds
-
-# Terminfo 
-export TERMINFO=/usr/share/terminfo
 
 # Function for extracting archives
 extract() {
