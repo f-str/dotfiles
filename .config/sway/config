@@ -52,9 +52,9 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-# bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | grep -x "^[a-zA-Z]*" | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
-# for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
-bindsym $mod+d exec fuzzel -I 
+bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | grep -x "^[a-zA-Z]+\S*$" | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
+for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
+# bindsym $mod+d exec fuzzel -I 
 
 # Start small centered terminal
 bindsym $mod+Shift+Return exec kitty --class 'launcher'
@@ -127,8 +127,8 @@ set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
+set $ws7 "7:"
+set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
 
