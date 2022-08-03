@@ -162,6 +162,12 @@ source ${HOME}/.zsh/.aliases
 # Keybinds
 source ${HOME}/.zsh/.keybinds
 
+# Add Jetbrains Toolbox to PATH
+export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
+
+# Add complete /opt/ directory in order to have access to all binaries from there
+export PATH="/opt/:$PATH"
+
 # Function for extracting archives
 extract() {
   if [ -f $1 ] ; then
