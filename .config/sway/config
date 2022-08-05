@@ -133,19 +133,19 @@ set $ws9 "9:"
 set $ws10 "10:"
 
 # assign workspaces
-assign [class="jetbrains-idea code"] $ws1
-assign [class="firefox"] $ws2
-assign [class="Google-chrome"] $ws3
+#assign [class="jetbrains-idea code"] $ws1
+#assign [class="firefox"] $ws2
+#assign [class="Google-chrome"] $ws3
 #assign [class=""] $ws4
 #assign [class=""] $ws5
-assign [class="discord"] $ws6
+#assign [class="discord"] $ws6
 #assign [class=""] $ws7
 #assign [class=""] $ws8
 #assign [class=""] $ws9
 assign [class="Thunderbird"] $ws10
 
 # auto move some window classes
-for_window [class="firefox"] move to workspace $ws2
+# for_window [class="firefox"] move to workspace $ws2
 for_window [class="Google-chrome"] move to workspace $ws3
 for_window [class="Thunderbird"] move to workspace $ws10
 
@@ -255,5 +255,10 @@ exec --no-startup-id thunderbird
 # exec --no-startup-id nextcloud
 # exec --no-startup-id corectrl
 # exec --no-startup-id jetbrains-toolbox
+
+
+# Fix Firefox Picture-in-Picture mode 
+for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, move position 877 450, sticky enable
+
 
 include /etc/sway/config.d/*
