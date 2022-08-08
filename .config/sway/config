@@ -52,7 +52,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | grep -x "^[a-zA-Z]+\S*$" | sort -u | fzf --info=hidden --border | xargs -r swaymsg -t command exec'
+bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | grep -x "^[a-zA-Z]+\S*$" | sort -u | fzf --info=hidden --border | read cmd && swaymsg -t command exec \"zsh -ic $cmd\"'
 for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
 # bindsym $mod+d exec fuzzel -I 
 
