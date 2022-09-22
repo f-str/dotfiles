@@ -120,7 +120,7 @@ zstyle ':completion:*:processes-names' command "ps -eo cmd= | sed 's:\([^ ]*\).*
 
 # SSH usernames
 if [[ -f ~/.ssh/config ]]; then
-  _accounts=(`egrep "^User" ~/.ssh/config | sed s/User\ // | egrep -v '^\*$'`)
+  _accounts=(`grep -E "^User" ~/.ssh/config | sed s/User\ // | grep -E -v '^\*$'`)
   zstyle ':completion:*:users' users $_accounts
 fi
 
