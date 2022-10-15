@@ -10,69 +10,46 @@ if ! zgen saved; then
 
   # plugins
   zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/sudo
   zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/bundler
   zgen oh-my-zsh plugins/dotenv
-  zgen oh-my-zsh plugins/rake
-  zgen oh-my-zsh plugins/rbenv
-  zgen oh-my-zsh plugins/colorize
   zgen oh-my-zsh plugins/common-aliases
   zgen oh-my-zsh plugins/compleat
-  zgen oh-my-zsh plugins/cp
-  zgen oh-my-zsh plugins/dircycle
-  zgen oh-my-zsh plugins/dirhistory
-  zgen oh-my-zsh plugins/dirpersist
+  zgen oh-my-zsh plugins/fzf
   zgen oh-my-zsh plugins/extract
-  zgen oh-my-zsh plugins/fasd
-  zgen oh-my-zsh plugins/frontend-search
-  zgen oh-my-zsh plugins/github
   zgen oh-my-zsh plugins/gnu-utils
-  zgen oh-my-zsh plugins/history
-  zgen oh-my-zsh plugins/history-substring-search
   zgen oh-my-zsh plugins/pip
-  zgen oh-my-zsh plugins/profiles
+  zgen oh-my-zsh plugins/pipenv
+  zgen oh-my-zsh plugins/poetry
+  zgen oh-my-zsh plugins/pylint
   zgen oh-my-zsh plugins/python
+  zgen oh-my-zsh plugins/ripgrep
   zgen oh-my-zsh plugins/systemadmin
-  zgen oh-my-zsh plugins/themes
   zgen oh-my-zsh plugins/tmux
   zgen oh-my-zsh plugins/urltools
   zgen oh-my-zsh plugins/rust
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/golang
   zgen oh-my-zsh plugins/gradle
   zgen oh-my-zsh plugins/mvn
   zgen oh-my-zsh plugins/kate
-  zgen oh-my-zsh plugins/man
-  zgen oh-my-zsh plugins/mercurial
-  zgen oh-my-zsh plugins/nmap
-  zgen oh-my-zsh plugins/web-search
   
   zgen load hchbaw/list-colors.zsh
   zgen load thrig/zsh-compdef
   zgen load zsh-users/zsh-completions
   zgen load zsh-users/zsh-completions src
   zgen load http://git.code.sf.net/p/zsh/code Completion/Linux/Command
-  zgen load Vifon/deer
-  zgen load zsh-users/zaw
-  zgen load clvv/fasd
-  #zgen load psprint/zsh-navigation-tools
   zgen load zsh-users/zsh-syntax-highlighting
-  zgen load trapd00r/zsh-syntax-highlighting-filetypes
+  # zgen load trapd00r/zsh-syntax-highlighting-filetypes
   zgen load zsh-users/zsh-history-substring-search
   zgen load tarruda/zsh-autosuggestions
   
   # theme
-  zgen load Fload2000/agnoster-zsh-theme
+  zgen load f-str/agnoster-zsh-theme
 
   # generate the init script from plugins above
   zgen save
 fi
 
 # load theme
-source "${ZGEN}/Fload2000/agnoster-zsh-theme-master/agnoster.zsh-theme"
+source "${ZGEN}/f-str/agnoster-zsh-theme-master/agnoster.zsh-theme"
 
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -148,8 +125,6 @@ zstyle ':completion:*' cache-path ~/.cache/zsh
 
 
 # Preferred editor for local and remote sessions
-export VISUAL=nvim;
-export EDITOR=nvim;
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
@@ -162,11 +137,8 @@ source ${HOME}/.zsh/.aliases
 # Keybinds
 source ${HOME}/.zsh/.keybinds
 
-# Add Jetbrains Toolbox to PATH
-export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
-
-# Add complete /opt/ directory in order to have access to all binaries from there
-export PATH="/opt/:$PATH"
+# Terminfo 
+export TERMINFO=/usr/share/terminfo
 
 # Function for extracting archives
 extract() {
