@@ -2,6 +2,8 @@ export ZSH=~/.zsh
 export ZGEN=~/.zgen
 export PATH=$PATH:/usr/local/bin:~/.local/bin
 
+export CHROME_EXECUTABLE=/usr/bin/chromium
+
 #load zgen
 source "${ZSH}/zgen/zgen.zsh"
 
@@ -186,6 +188,11 @@ weather() {
 # Function for faster gcc usage
 cgcc() {
     gcc -Wall -Wextra -v -o ${1%.*} ${1}
+}
+
+# Get a string from the history and remove duplicated occurencies
+grephu() {
+  history | grep ${1} | awk '{$1="";print substr($0,2)}' | sort --unique
 }
 
 # >>> conda initialize >>>
