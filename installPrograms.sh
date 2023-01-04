@@ -50,7 +50,6 @@ echo
 echo "Installing Office..."
 echo
 PKGS_Office=(
-    'ms-office-online'
     'libreoffice-fresh'
     'libreoffice-fresh-de'
     'hunspell'
@@ -84,6 +83,7 @@ echo
 echo "Installing Browsers..."
 echo
 PKGS_Browser=(
+    'firefox'
     'chromium'
     'google-chrome'
     'torbrowser-launcher'
@@ -139,12 +139,10 @@ PKGS_Programming=(
     'scenebuilder'
     'android-sdk'
     'flutter'
-    'burpsuite'
     'mono'
     'mono-tools'
     'wireshark-qt'
     'wireshark-cli'
-    'tomcat9'
     'docker'
     'docker-compose'
     'lldb'
@@ -170,9 +168,7 @@ echo
 echo "Installing IDEs..."
 echo
 PKGS_IDEs=(
-    'codeblocks'
     'code'
-    'android-studio'
     'jetbrains-toolbox'
 )
 installPackages "${PKGS_IDEs[@]}"
@@ -185,7 +181,6 @@ PGKS_Image=(
     'krita'
     'gwenview'
     'inkscape'
-    'blender'
     'eog'
 )
 installPackages "${PKGS_Image[@]}"
@@ -206,7 +201,6 @@ echo
 echo "Installing audio programs..."
 echo
 PKGS_Audio=(
-    'audacity'
     'spotify'
 )
 installPackages "${PKGS_Audio[@]}"
@@ -253,8 +247,6 @@ PKGS_Gaming=(
     'steam'
     'lutris'
     'minecraft-launcher'
-    'feedthebeast'
-    'minecraft-technic-launcher'
     'heroic-games-launcher-bin'
 )
 installPackages "${PKGS_Gaming[@]}"
@@ -265,11 +257,7 @@ echo
 PKGS_Chatting=(
     'discord'
     'betterdiscordctl'
-    'element-desktop'
-    'telegram-desktop'
     'zoom'
-    'skypeforlinux-preview-bin'
-    'teamspeak3'
 )
 installPackages "${PKGS_Chatting[@]}"
 
@@ -284,7 +272,6 @@ PKGS_Utility=(
     'corectrl'
     'dia'
     'clinfo'
-    'freecad'
     'filelight'
     'ktorrent'
     'neofetch'
@@ -297,16 +284,12 @@ PKGS_Utility=(
     'tar'
     'yt-dlp'
     'obs-studio'
-    'geogebra'
-    'fritzing'
     'discover'
     'packagekit-qt5'
     'hashcat'
     'netcat'
     'lm_sensors'
     'speedtest-cli'
-    'ckb-next'
-    'piper'
     'parted'
     'gparted'
     'skanlite'
@@ -321,6 +304,7 @@ PKGS_Utility=(
     'xterm'
     'bashtop'
     'powertop'
+    'nextcloud-client'
 )
 installPackages "${PKGS_Utility[@]}"
 

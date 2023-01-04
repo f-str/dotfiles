@@ -166,7 +166,6 @@ PKGS_Utility=(
     'xterm'
     'nextcloud-client'
     'dbeaver'
-    'drawio-desktop'
 )
 installPackages "${PKGS_Utility[@]}"
 
