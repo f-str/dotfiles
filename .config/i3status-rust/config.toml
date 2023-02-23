@@ -1,21 +1,21 @@
-theme = "slick"
-icons = "awesome5"
+[theme]
+theme = "modern"
+[icons]
+icons = "awesome6"
 
 [[block]]
 block = "focused_window"
-max_width = 25
-show_marks = "visible"
+[block.format]
+full = " $title.str(max_w:15) |"
+short = " $title.str(max_w:10) |"
 
 [[block]]
 block = "music"
 player = "spotify"
-buttons = ["play"]
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used_percents}"
-format_swap = "{swap_used_percents}"
+format = " $icon $mem_used_percents.eng(w:1) "
 
 [[block]]
 block = "cpu"
@@ -23,7 +23,7 @@ interval = 1
 
 [[block]]
 block = "net"
-format = "{ip} {speed_down;K*b} {speed_up;K*b}"
+format = " $icon $ip ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K)"
 interval = 5
 
 [[block]]
@@ -44,12 +44,15 @@ device_kind = "sink"
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}"
+format = " $icon $percentage "
 
 [[block]]
 block = "notify"
+format = " $icon {($notification_count.eng(w:1)) |}"
 
 [[block]]
 block = "time"
-interval = 5
-format = "%a %d/%m %R"
+interval = 60
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %R', l:de_DE) "
+short = " $icon $timestamp.datetime(f:%R) "
