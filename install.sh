@@ -82,8 +82,8 @@ echo
 echo "Enabling cusom systemd user services..."
 echo
 
-systemd --user daemon-reload
-systemd --user enable --now pipewire-input-filter-chain.service
+systemctl --user daemon-reload
+systemctl --user enable --now pipewire-input-filter-chain.service
 
 
 echo
