@@ -44,6 +44,7 @@ PKGS=(
         'ttf-jetbrains-mono'
         'exa'
         'ghc'
+        'fzf'
         'noise-suppression-for-voice'
 )
 
