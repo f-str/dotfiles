@@ -44,6 +44,8 @@ PKGS=(
         'ttf-droid'
         'ttf-jetbrains-mono'
         'exa'
+        'ghc'
+        'noise-suppression-for-voice'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -62,6 +64,7 @@ for PIP in "${PIPS[@]}"; do
     pip3 install "$PIP"
 done
 
+
 echo
 echo "Copying the configuration files..."
 echo
@@ -70,15 +73,42 @@ cd
 mkdir -p $HOME/.zsh
 mkdir -p $HOME/.config
 mkdir -p $HOME/.icons
+mkdir -p $HOME/.local/bin
 
-git clone --recursive https://github.com/Fload2000/dotfiles
+git clone --recursive https://github.com/f-str/dotfiles
 cd dotfiles
+
+
+echo
+echo "Enabling cusom systemd user services..."
+echo
+
+systemd --user daemon-reload
+systemd --user enable --now pipewire-input-filter-chain.service
+
+
+echo
+echo "Compiling custom utilities"
+echo
+
+ghc -dynamic utils/pert/pert.hs
+
+echo
+echo "Copying files to home dirctory"
+echo
+
 cp -a .face $HOME/
 cp -a .gitconfig $HOME/
 cp -a .zshrc $HOME/
 cp -ar .zsh/. $HOME/.zsh/
 cp -ar .icons/. $HOME/.icons/
 cp -ar .config/. $HOME/.config/
+
+echo
+echo "Move custom compiled binaries to direcotries"
+echo
+
+mv utils/pert/pert $HOME/.local/bin/
 
 # Remove the dotfiles directory
 rm -rf $HOME/dotfiles
