@@ -11,6 +11,6 @@ NITROGEN_CONFIG_NITROGEN="$HOME/.config/nitrogen/nitrogen.cfg"
 if [[ -f "$WALLPAPER_CONFIG_BG_SAVED" && -f "$WALLPAPER_CONFIG_NITROGEN" ]]; then
     cp "$WALLPAPER_CONFIG_BG_SAVED" "$NITROGEN_CONFIG_BG_SAVED"
     cp "$WALLPAPER_CONFIG_NITROGEN" "$NITROGEN_CONFIG_NITROGEN"
-else
-    nitorgen --restore
 fi
+
+nitrogen --restore
