@@ -86,7 +86,7 @@ PKGS_Browser=(
     'firefox'
     'chromium'
     'google-chrome'
-    'brave'
+    'brave-bin'
     'torbrowser-launcher'
 )
 installPackages "${PKGS_Browser[@]}"
