@@ -25,7 +25,6 @@ PKGS=(
         'i3status-rust'
         'dunst'
         'htop'
-        'gotop'
         'feh'
         'i3lock'
         'imagemagick'
