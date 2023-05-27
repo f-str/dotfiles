@@ -16,19 +16,19 @@ echo
 echo "Installing KDE Plasma interface related stuff..."
 echo
 PKGS_Plasma=(
-    'plasma-wayland-session'
-    'latte-dock'
+    #'plasma-wayland-session'
+    #'latte-dock'
     'guake'
-    'kde-graphics-meta'
+    #'kde-graphics-meta'
     'kde-system-meta'
     'dolphin-plugins'
     'kompare'
     'breeze-enhanced-git'
     'colord-kde'
-    'kde-applications'
+    #'kde-applications'
     'print-manager'
-    'pulseaudio'
-    'kdeconnect'
+    #'pulseaudio'
+    #'kdeconnect'
 )
 installPackages "${PKGS_Plasma[@]}"
 
@@ -86,6 +86,7 @@ PKGS_Browser=(
     'firefox'
     'chromium'
     'google-chrome'
+    'brave'
     'torbrowser-launcher'
 )
 installPackages "${PKGS_Browser[@]}"
@@ -103,7 +104,7 @@ echo "Installing Java..."
 echo
 PKGS_Java=(
     'jdk17-openjdk'
-    'jdk19-openjdk'
+    'jdk-openjdk'
     'jdk11-openjdk'
     'jdk8-openjdk'
 )
@@ -135,8 +136,6 @@ PKGS_Programming=(
     'arduino'
     'sqlite'
     'sqlitebrowser'
-    'nginx'
-    'scenebuilder'
     'android-sdk'
     'flutter'
     'mono'
@@ -144,9 +143,7 @@ PKGS_Programming=(
     'wireshark-qt'
     'wireshark-cli'
     'docker'
-    'docker-compose'
     'lldb'
-    'github-cli'
     'python-pip'
     'base-devel' 
     'xclip'
@@ -191,9 +188,6 @@ echo
 PKGS_Video=(
     'kdenlive'
     'vlc'
-    'libdvdread'
-    'libdvdcss'
-    'libdvdnav'
 )
 installPackages "${PKGS_Video[@]}"
 
@@ -218,25 +212,25 @@ echo
 echo "Installing Mesa..."
 echo
 PKGS_Mesa=(
-    'mesa'
-    'lib32-mesa'
-    'xf86-video-amdgpu'
-    'vulkan-radeon'
-    'lib32-vulkan-radeon'
-    'libva-mesa-driver'
-    'lib32-libva-mesa-driver'
-    'mesa-vdpau'
-    'lib32-mesa-vdpau'
-    'opencl-mesa'
-    'ocl-icd'
-    'opencl-headers'
-    'libva-mesa-driver'
-    'vainfo'
-    'libva-utils'
-    'vdpauinfo'
-    'vulkan-icd-loader'
-    'amdvlk'
-    'lib32-amdvlk'
+    #'mesa'
+    #'lib32-mesa'
+    #'xf86-video-amdgpu'
+    #'vulkan-radeon'
+    #'lib32-vulkan-radeon'
+    #'libva-mesa-driver'
+    #'lib32-libva-mesa-driver'
+    #'mesa-vdpau'
+    #'lib32-mesa-vdpau'
+    #'opencl-mesa'
+    #'ocl-icd'
+    #'opencl-headers'
+    #'libva-mesa-driver'
+    #'vainfo'
+    #'libva-utils'
+    #'vdpauinfo'
+    #'vulkan-icd-loader'
+    #'amdvlk'
+    #'lib32-amdvlk'
 )
 installPackages "${PKGS_Mesa[@]}"
 
@@ -245,9 +239,9 @@ echo "Installing gaming programs..."
 echo
 PKGS_Gaming=(
     'steam'
-    'lutris'
+    #'lutris'
     'minecraft-launcher'
-    'heroic-games-launcher-bin'
+    #'heroic-games-launcher-bin'
 )
 installPackages "${PKGS_Gaming[@]}"
 
@@ -256,7 +250,7 @@ echo "Installing chatting programs..."
 echo
 PKGS_Chatting=(
     'discord'
-    'betterdiscordctl'
+    #'betterdiscordctl'
     'zoom'
 )
 installPackages "${PKGS_Chatting[@]}"
@@ -266,10 +260,11 @@ echo "Installing utility programs..."
 echo 
 PKGS_Utility=(
     'htop'
-    'gotop'
-    'virtualbox'
-    'radeontop'
-    'corectrl'
+    'btop'
+    #'gotop'
+    #'virtualbox'
+    #'radeontop'
+    #'corectrl'
     'dia'
     'clinfo'
     'filelight'
@@ -285,7 +280,7 @@ PKGS_Utility=(
     'yt-dlp'
     'obs-studio'
     'discover'
-    'packagekit-qt5'
+    #'packagekit-qt5'
     'hashcat'
     'netcat'
     'lm_sensors'
@@ -295,14 +290,14 @@ PKGS_Utility=(
     'skanlite'
     'snapper'
     'snapper-gui-git'
-    'xorgconfig'
-    'qt5ct'
+    #'xorgconfig'
+    #'qt5ct'
     'grub-customizer'
-    'xorg-server-devel'
-    'ntfs-3g'
-    'xorg'
+    #'xorg-server-devel'
+    #'ntfs-3g'
+    #'xorg'
     'xterm'
-    'bashtop'
+    #'bashtop'
     'powertop'
     'nextcloud-client'
 )
