@@ -54,3 +54,8 @@ alias startconda='source /opt/anaconda/bin/activate root'
 
 # Map Wacom table to main monitors
 alias mapwacom='xinput map-to-output 19 DisplayPort-3'
+
+# Executes kubectl get pods every second to provide a "live" update of the pods
+alias watchpods='watch -n 1 -t kubectl get pods'
+
+alias watchgpu='watch -n 1 -t nvidia-smi'
