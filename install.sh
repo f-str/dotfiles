@@ -35,17 +35,23 @@ PKGS=(
         'w3m'
         'ranger'
         'ttf-font-awesome'
+        'ttf-font-awesome-5'
         'ttf-dejavu'
         'noto-fonts'
         'noto-fonts-emoji'
         'terminus-font'
+        'ttf-noto-nerd',
         'ttf-liberation'
         'ttf-droid'
         'ttf-jetbrains-mono'
         'exa'
         'ghc'
         'fzf'
+        'jq'
         'noise-suppression-for-voice'
+        'python-debugpy'
+        'delve'
+        'lazygit'
 )
 
 for PKG in "${PKGS[@]}"; do
