@@ -153,6 +153,9 @@ PKGS_Programming=(
     'kubectl'
     'helm'
     'kubectx'
+    'dotnet-runtime'
+    'dotnet-sdk'
+    'aspnet-runtime'
 )
 installPackages "${PKGS_Programming[@]}"
 
