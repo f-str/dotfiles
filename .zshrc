@@ -1,6 +1,6 @@
 export ZSH=~/.zsh
 export ZGEN=~/.zgen
-export PATH=$PATH:/usr/local/bin:~/.local/bin
+export PATH=$PATH:/usr/local/bin:~/.local/bin:$HOME/.local/share/JetBrains/Toolbox/scripts
 
 export CHROME_EXECUTABLE=/usr/bin/chromium
 
