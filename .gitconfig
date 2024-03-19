@@ -1,10 +1,12 @@
 [user]
 	email = git@f-str.de
 	name = Florian Straubinger
-	signingkey = D55FE5B65D228F58
+	signingkey = B6C8545CE7808AC5
 [gpg]
 	program = gpg2
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
+[safe]
+	directory = /opt/flutter
