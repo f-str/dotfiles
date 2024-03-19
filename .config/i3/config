@@ -1,8 +1,20 @@
+# Apply Monitor configuration
+exec "autorandr -l default"
+
 # Set German keyboard layout.
 exec "setxkbmap -layout de"
 
 # Disable Beeper
 exec "setx -b"
+
+# Disable Screen Saver
+exec "setx s off"
+
+# Disable power saving feature
+exec "setx -dpms"
+
+# Set Mouse speed
+# exec "xset mouse 3 6"
 
 # Set superkey.
 set $mod Mod4
@@ -47,7 +59,8 @@ bindsym $mod+Shift+q kill
 
 
 # Start your launcher
-bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | rg -x "^[a-zA-Z]+\S*$" | sort -u | fzf --info=hidden --border | read cmd && i3-msg -t command exec \"zsh -ic $cmd\"'
+# bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | rg -x "^[a-zA-Z]+\S*$" | sort -u | fzf --info=hidden --border | read cmd && i3-msg -t command exec \"zsh -ic $cmd\"'
+bindsym $mod+d exec kitty --class 'launcher' rrun
 
 for_window [class="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
 
@@ -102,7 +115,7 @@ set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
-set $ws9 "9:"
+set $ws9 "9:"
 set $ws10 "10:"
 
 # assign workspaces
@@ -192,12 +205,15 @@ client.background       #ffffff
 # Focus should not follow the mouse
 focus_follows_mouse no
 
+# Disable mouse warping
+mouse_warping none
+
 # Remove borders of windows
 for_window [class=".*"] border pixel 2
 hide_edge_borders both
 
 # Use feh to set wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Nextcloud/Bilder/Wallpaper/42okxyq85yq91.jpg
+exec_always sh $HOME/.config/i3/scripts/wallpaper.sh
 
 # Execute Flameshot
 exec --no-startup-id flameshot
@@ -206,8 +222,9 @@ bindsym $mod+Shift+s exec flameshot gui
 
 # i3status-rustS
 bar {
+    output DisplayPort-3
     strip_workspace_numbers yes
-    font pango:DejaVu Sans Mono, Font Awesome 5 Brands Regular, Font Awesome 5 Free Solid, FontAwesome 11
+    font pango:Font Awesome 5 Brands Regular, Font Awesome 5 Free Solid, FontAwesome, DejaVu Sans Mono 11
     position top
     tray_output primary
     status_command /usr/bin/i3status-rs $HOME/.config/i3status-rust/config.toml
@@ -222,14 +239,20 @@ bar {
     }
 }
 
+bindsym $mod+i exec dolphin
+
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id udiskie -s
 exec --no-startup-id blueman-applet
 exec --no-startup-id picom
 exec --no-startup-id corectrl
+exec --no-startup-id ckb-next
+exec --no-startup-id jetbrains-toolbox
 
 exec --no-startup-id firefox
 exec --no-startup-id thunderbird
 exec --no-startup-id nextcloud
 exec --no-startup-id discord
+exec --no-startup-id spotify
+exec --no-startup-id steam
