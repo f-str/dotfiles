@@ -109,6 +109,7 @@ cp -a .zshrc $HOME/
 cp -ar .zsh/. $HOME/.zsh/
 cp -ar .icons/. $HOME/.icons/
 cp -ar .config/. $HOME/.config/
+cp -a .tmux.conf $HOME/
 
 echo
 echo "Move custom compiled binaries to direcotries"
@@ -121,6 +122,15 @@ rm -rf $HOME/dotfiles
 
 # Rebuild the font cache
 fc-cache -f
+
+
+echo
+echo "Installing Tmux plugin manager"
+echo
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+
 
 echo
 echo "Done!"
