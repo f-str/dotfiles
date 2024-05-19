@@ -205,6 +205,11 @@ client.background       #ffffff
 # Focus should not follow the mouse
 focus_follows_mouse no
 
+no_focus [all]
+focus_on_window_activation none
+
+for_window [class="kitty"] focus
+
 # Disable mouse warping
 mouse_warping none
 
@@ -239,11 +244,10 @@ bar {
     }
 }
 
-bindsym $mod+i exec dolphin
+bindsym $mod+i exec "kitty ranger"
 
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id udiskie -s
 exec --no-startup-id blueman-applet
 exec --no-startup-id picom
 exec --no-startup-id corectrl
