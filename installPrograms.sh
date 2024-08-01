@@ -168,7 +168,7 @@ echo
 echo "Installing IDEs..."
 echo
 PKGS_IDEs=(
-    'code'
+    'zed'
     'jetbrains-toolbox'
 )
 installPackages "${PKGS_IDEs[@]}"
