@@ -44,7 +44,7 @@ PKGS=(
         'ttf-liberation'
         'ttf-droid'
         'ttf-jetbrains-mono'
-        'exa'
+        'eza'
         'ghc'
         'fzf'
         'jq'

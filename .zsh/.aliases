@@ -32,10 +32,10 @@ alias pdfshrink='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/de
 # alias ls='ls -a --color=tty'
 
 # Use exa instead of ls
-alias ls='exa -a'
+alias ls='eza -a'
 
 # Use exa instead of ll
-alias ll='exa -lag@'
+alias ll='eza -lag@'
 
 # Determin public IP
 alias myip='wget http://checkip.dyndns.org -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1'
