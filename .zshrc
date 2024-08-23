@@ -36,7 +36,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/kate
   
   zgen load hchbaw/list-colors.zsh
-  zgen load thrig/zsh-compdef
   zgen load zsh-users/zsh-completions
   zgen load zsh-users/zsh-completions src
   zgen load http://git.code.sf.net/p/zsh/code Completion/Linux/Command
