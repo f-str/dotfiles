@@ -35,10 +35,10 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/mvn
   zgen oh-my-zsh plugins/kate
   
-  zgen load hchbaw/list-colors.zsh
+  zgen load hchbaw/list-colors.zsh # Check what this does
   zgen load zsh-users/zsh-completions
   zgen load zsh-users/zsh-completions src
-  zgen load http://git.code.sf.net/p/zsh/code Completion/Linux/Command
+  zgen load http://git.code.sf.net/p/zsh/code Completion/Linux/Command      # Check what this does
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
   zgen load tarruda/zsh-autosuggestions
