@@ -1,0 +1,12 @@
+[Unit]
+Description=Run xremap with config.yml
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xremap /home/florian/.config/xremap/config.yml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
