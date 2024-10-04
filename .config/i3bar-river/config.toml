@@ -1,0 +1,26 @@
+command = "i3status-rs"
+height = 20
+font = "pango:Font Awesome 5 Brands Regular, Font Awesome 5 Free Solid, FontAwesome, DejaVu Sans Mono 11"
+tags_padding = 8.0
+
+
+# Colors
+background = "#1d2025"
+color = "#ffffff"
+separator = "#9a8a62"
+tag_fg = "#cfd8dc"
+tag_bg = "#222D32"
+tag_focused_fg = "#211f21"
+tag_focused_bg = "#fe7e29"
+tag_urgent_fg = "#282828"
+tag_urgent_bg = "#cc241d"
+tag_inactive_fg = "#d79921"
+tag_inactive_bg = "#282828"
+
+
+# Monitors
+[output.DP-2]
+enable = true
+
+[output.DP-1]
+enable = false
