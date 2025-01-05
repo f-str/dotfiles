@@ -52,7 +52,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -60,12 +60,12 @@ bindsym $mod+Shift+q kill
 
 # Start your launcher
 # bindsym $mod+d exec kitty --class 'launcher' zsh -ic 'compgen -c -a | rg -x "^[a-zA-Z]+\S*$" | sort -u | fzf --info=hidden --border | read cmd && i3-msg -t command exec \"zsh -ic $cmd\"'
-bindsym $mod+d exec kitty --class 'launcher' rrun
+bindsym $mod+d exec ghostty --class 'launcher' rrun
 
 for_window [class="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
 
 # Start small centered terminal
-bindsym $mod+Shift+Return exec kitty --class 'launcher'
+bindsym $mod+Shift+Return exec ghostty --class 'launcher'
 
 # change focus
 bindsym $mod+Left focus left
@@ -208,7 +208,7 @@ focus_follows_mouse no
 no_focus [all]
 focus_on_window_activation none
 
-for_window [class="kitty"] focus
+for_window [class="ghostty"] focus
 
 # Disable mouse warping
 mouse_warping none

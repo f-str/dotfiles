@@ -1,5 +1,5 @@
 # Variables
-set $terminal kitty
+set $terminal ghostty
 
 # Keyboard
 input type:keyboard {
@@ -60,11 +60,11 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym $mod+d exec kitty --class 'launcher' rrun
+bindsym $mod+d exec $terminal --class 'launcher' rrun
 for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 20 ppt, move position center
 
 # Start small centered terminal
-bindsym $mod+Shift+Return exec kitty --class 'launcher'
+bindsym $mod+Shift+Return exec $terminal --class 'launcher'
 
 # Reload config
 bindsym $mod+Shift+r reload
