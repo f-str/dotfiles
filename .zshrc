@@ -223,6 +223,11 @@ grephu() {
   history | grep ${1} | awk '{$1="";print substr($0,2)}' | sort --unique
 }
 
+pips() {
+    echo "Public IPv4 Address: $(curl -s https://ipv4.icanhazip.com)"
+    echo "Public IPv6 Address: $(curl -s https://ipv6.icanhazip.com)"
+}
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
