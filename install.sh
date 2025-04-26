@@ -52,6 +52,7 @@ PKGS=(
         'python-debugpy'
         'delve'
         'lazygit'
+        'wl-clipboard'
 )
 
 for PKG in "${PKGS[@]}"; do
