@@ -22,8 +22,4 @@ vim.opt.softtabstop = 4
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
--- More convenient ways to get back to normal mode
-vim.keymap.set({'i', 'v'}, 'fd', '<ESC>')
-vim.keymap.set({'i', 'v'}, 'df', '<ESC>')
-
 vim.opt.clipboard = "unnamedplus"
