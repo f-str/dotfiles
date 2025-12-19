@@ -8,8 +8,29 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+    sort = -taggerdate
 [safe]
 	directory = /opt/flutter
 [core]
 	autocrlf = input
 	editor = vim
+    compression = 9
+    preloadindex = true
+    whitespace = error
+[init]
+    defaultBranch = main
+[status]
+    branch = true
+    showStash = true
+    showUntrackedFiles = all
+[push]
+    autoSetupRemote = true
+    default = current
+    followTags = true
+[pull]
+    default = current
+    rebase = true
+[branch]
+    sort = -committerdate
+[rerere]
+	enabled = true
