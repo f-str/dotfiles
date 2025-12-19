@@ -20,6 +20,6 @@ cursor-color = #ff8700
 
 # Font
 font-size = 11
-font-family = NotoSansM Nerd Font
+font-family = NotoSansM Nerd Font Mono
 
 shell-integration-features = sudo
